@@ -1,0 +1,29 @@
+.container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    flex-direction: column;
+}
+
+input{
+
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+}
+
+button{
+
+    background-color:#1344ff;
+    padding: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    width: 200px;
+    cursor: pointer;
+}
