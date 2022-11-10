@@ -1,41 +1,132 @@
-<div class="container">
+<div class="wrapper">
+  <div class="container">
+    <div class="header">
+      <span class="medical">Medical</span>
+      <span class="health">Health Care</span>
+      <span class="doctor">Doctor</span>
+      <span class="login" (click)="showLogin('open')">Login</span>
+    </div>
 
-   <div class="header">
-
-    <span class="medical">Medical</span>
-    <span class="health">Health Care</span>
-    <span class="doctor">Doctor</span>
-   </div>
-
-   <div class="body">
-
-    <div class="quote">
-
+    <div class="body">
+      <div class="quote">
         <span>Our Hospital will restore your Health very fast.</span>
-    </div>
+      </div>
 
-    <span class="customer">1000+ Customers</span>
-    <div class="logo">
-
-        
-
+      <span class="customer">1000+ Customers</span>
+      <div class="logo">
         <span>Vigen Medics</span>
-
+      </div>
     </div>
-   </div>
-</div>
+  </div>
 
-<div class="aboutus">
-
+  <div class="aboutus">
     <div class="about-header">
-       <span>About Us</span> 
+      <span>About Us</span>
     </div>
 
     <div class="needle-image">
-        <img src="../../../assets/injection-1712511_1280.png" alt="">
+      <img src="../../../assets/injection-1712511_1280.png" alt="" />
     </div>
 
     <div class="about-detail">
-        But it is always important to get up and get back to the grind. Today, we motivate you with some doctor motivational quotes for medical students and anecdotes to help you feel positive and charged up. 
+      <span class="detail"
+        >But it is always important to get up and get back to the grind. Today,
+        we motivate you with some doctor motivational quotes for medical
+        students and anecdotes to help you feel positive and charged up.
+      </span>
     </div>
+  </div>
+
+  <div class="teams">
+    <div class="teams-header">
+      <h1>Our Team</h1>
+    </div>
+
+    <div class="teams-details">
+      <div class="teams-container">
+        <img
+          src="https://cdn.pixabay.com/photo/2017/03/14/03/20/woman-2141808__340.jpg"
+          alt=""
+        />
+
+        <span
+          >But it is always important to get up and get back to the grind.
+          Today, we motivate you with some doctor motivational quotes for
+          medical students and anecdotes to help you feel positive and charged
+          up.</span
+        >
+      </div>
+
+      <div class="teams-container">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036__340.png"
+          alt=""
+        />
+
+        <span
+          >But it is always important to get up and get back to the grind.
+          Today, we motivate you with some doctor motivational quotes for
+          medical students and anecdotes to help you feel positive and charged
+          up.</span
+        >
+      </div>
+
+      <div class="teams-container">
+        <img
+          src="https://cdn.pixabay.com/photo/2017/05/23/17/12/doctor-2337835__340.jpg"
+          alt=""
+        />
+
+        <span
+          >But it is always important to get up and get back to the grind.
+          Today, we motivate you with some doctor motivational quotes for
+          medical students and anecdotes to help you feel positive and charged
+          up.</span
+        >
+      </div>
+
+      <div class="teams-container">
+        <img
+          src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420__340.jpg"
+          alt=""
+        />
+
+        <span
+          >But it is always important to get up and get back to the grind.
+          Today, we motivate you with some doctor motivational quotes for
+          medical students and anecdotes to help you feel positive and charged
+          up.</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-logo">Vigen Medics</span>
+
+    <span class="made-by">&copy; 2022 Reserved. All rights reserved.</span>
+  </div>
+</div>
+
+
+<div class="login-container" *ngIf="login" >
+
+   
+
+    <div class="login-wrapper" >
+
+        <span class="close" (click)="showLogin('close')">Close</span>
+        <div class="login-input">
+
+            <h1>Vigen Medics</h1>
+
+            <input type="text" placeholder="Enter email">
+            <input type="password" placeholder="Enter Password">
+            <button class="btn-login">Login</button>
+
+            <span>Ask to be registered.</span>
+        </div>
+
+    </div>
+
 </div>
