@@ -1,0 +1,127 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #c3c4ca;
+  background-image: url("../../../assets/nurse-2019420_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+}
+
+.medical {
+  background-color: #1344ff;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  width: 100px;
+  color: #fff;
+  margin: 30px;
+  cursor: pointer; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  width: 100px;
+  border: 1px solid #AAAA;
+  margin: 30px;
+  cursor: pointer; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  width: 100px;
+  border: 2px solid #AAAA;
+  margin: 30px;
+cursor: pointer;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body{
+
+    margin-bottom: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.quote{
+
+    font-size: 30px;
+    color: #333;
+    width: 350px;
+    margin: 40px;
+}
+.customer{
+
+    font-size: 55px;
+    color: #333;
+}
+
+.logo{
+
+    height: 100px;
+    width: 200px;
+    background-color: #1344ff;
+    padding: 20px;
+    color: #fff;
+    
+    margin-right: 100px;
+    font-size: 20px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.aboutus{
+
+    margin: 100px;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.aboutus img{
+
+    height: 350px;
+    width: 350px;
+}
+
+.about-header{
+    flex: 1;
+
+    font-size: 55px;
+    color: #444;
+   
+}
+
+.needle-image{
+    flex: 1;
+}
+
+.about-detail{
+
+    flex: 1;
+}
