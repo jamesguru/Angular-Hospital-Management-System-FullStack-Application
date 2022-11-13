@@ -1,0 +1,140 @@
+<div class="wrapper">
+
+<app-topbar></app-topbar>
+<div class="container">
+  <div class="patient-header">
+    <span>Name</span>
+
+    <span>Location</span>
+
+    <span>Room admitted</span>
+
+    <span>Admission No</span>
+
+    <span>Id no</span>
+
+    <span>Status</span>
+  </div>
+
+  <div class="add">
+    <fa-icon [icon]="faAdd" class="add-icon" (click)="showAdd()"></fa-icon>
+    <span (click)="showAdd()">Add patient</span>   
+  </div>
+  <div class="search">
+    <input type="text" placeholder="Search patient by Id no" />
+  </div>
+
+  <div
+    class="patient-body"
+    *ngFor="
+      let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+    "
+  >
+
+
+    <div class="patient-container">
+      <span>John Kimuru</span>
+
+      <span>Texas</span>
+
+      <span>RN3 SECOND FLOOR(no 3)</span>
+
+      <span>MRV194526491</span>
+
+      <span>3452728282882</span>
+
+      <span>Good</span>
+    </div>
+
+    <div class="patient-container">
+      <span>John Kimuru</span>
+
+      <span>Texas</span>
+
+      <span>RN3 SECOND FLOOR(no 3)</span>
+
+      <span>MRV194526491</span>
+
+      <span>3452728282882</span>
+
+      <span>Good</span>
+    </div>
+
+    <div class="patient-container">
+      <span>John Kimuru</span>
+
+      <span>Texas</span>
+
+      <span>RN3 SECOND FLOOR(no 3)</span>
+
+      <span>MRV194526491</span>
+
+      <span>3452728282882</span>
+
+      <span>Good</span>
+    </div>
+
+    <div class="patient-container">
+      <span>John Kimuru</span>
+
+      <span>Texas</span>
+
+      <span>RN3 SECOND FLOOR(no 3)</span>
+
+      <span>MRV194526491</span>
+
+      <span>3452728282882</span>
+
+      <span>Good</span>
+    </div>
+
+    <div class="patient-container">
+      <span>John Kimuru</span>
+
+      <span>Texas</span>
+
+      <span>RN3 SECOND FLOOR(no 3)</span>
+
+      <span>MRV194526491</span>
+
+      <span>3452728282882</span>
+
+      <span>Good</span>
+    </div>
+
+   
+    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+  </div>
+</div>
+</div>
+
+
+<div class="addpatient" *ngIf="close">
+
+    <div class="add_patient_item">
+
+        <h3>Add patient</h3>
+
+        <span class="close" (click)="showAdd()">Close</span>
+
+        <label for="">Name</label>
+        <input type="text">
+        <label for="">Location</label>
+        <input type="text">
+
+        <label for="">Room No</label>
+        <input type="text">
+
+        <label for="">Id no</label>
+        <input type="text">
+
+        <label for="">Admitted no</label>
+        <input type="text">
+
+        <label for="">Date</label>
+        <input type="date">
+
+        <button class="btn-add">Submit</button>
+        
+    </div>
+</div>

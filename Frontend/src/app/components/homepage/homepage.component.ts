@@ -17,7 +17,7 @@ export class HomepageComponent implements OnInit {
     setTimeout(()=>{
 
       this.login=true;
-    },4000)
+    },20000)
   }
 
   showLogin(condition: string) {

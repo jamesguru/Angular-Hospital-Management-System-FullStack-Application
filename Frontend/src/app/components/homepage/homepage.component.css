@@ -131,9 +131,10 @@
   flex: 1;
   background-color: #1344ff;
   color: #fff;
-  padding: 45px;
+  padding: 50px;
   border-radius: 0px;
-  border-radius: 10px;
+  border-radius: 15px;
+
 }
 
 .detail {
@@ -218,11 +219,11 @@ background-color: rgba(0, 0, 0, 0.1);
 
 .login-wrapper{
 
-  margin: 100px;
+  margin: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 75%;
+  height: 85%;
   width: 50%;
   background-color: #fff;
   color: #333;
