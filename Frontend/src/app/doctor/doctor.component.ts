@@ -13,7 +13,7 @@ export class DoctorComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = new FormGroup({
-      food: new FormControl('lamb'),
+      available: new FormControl('available'),
     });
   }
   p: number = 1;
@@ -25,5 +25,10 @@ export class DoctorComponent implements OnInit {
 
     console.log('hellooooo')
     this.close = !this.close;
+  }
+
+  setAvailability(){
+
+    console.log(this.form.value)
   }
 }
