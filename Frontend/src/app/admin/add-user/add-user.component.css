@@ -1,0 +1,50 @@
+.container{
+
+    margin: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.add-item{
+
+    margin: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.add-item input{
+
+    width: 200px;
+
+    padding: 5px;
+
+    
+}
+
+.container button{
+
+    padding: 10px;
+
+    border: none;
+
+    color:#fff;
+
+    font-size: 15px;
+
+    background-color: #203354;
+
+
+    width: 200px;
+}
+
+.add-item select{
+
+    width: 200px;
+    padding: 10px;
+}

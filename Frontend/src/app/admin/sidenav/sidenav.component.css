@@ -1,0 +1,54 @@
+
+h2{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #AAA;
+
+    padding: 30px;
+}
+.container {
+  height: 100vh;
+  background-color: #203354;
+
+}
+
+
+ul li{
+
+    display: flex;
+    align-items: column;
+
+    color: #AAA;
+    font-size: 14px;
+}
+
+ul li:hover{
+
+    color: #fff;
+}
+
+li {
+  cursor: pointer;
+
+  margin: 0px 20px;
+
+padding: 30px;
+
+ 
+}
+
+li:hover{
+
+    cursor: pointer;
+
+    color: #fff;
+}
+
+.icon{
+
+    font-size: 20px;
+    margin-right: 20px;
+}

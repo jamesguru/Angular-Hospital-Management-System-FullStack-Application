@@ -1,9 +1,9 @@
-
-
 .container{
 
     max-width: 1024px;
     position: relative;
+
+    margin-top: 50px;
 }
 
 .available{
@@ -19,6 +19,15 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    color: #AAA;
+    padding: 20px;
+
+    margin: 20px;
+
+    font-size: 15px;
+
+    background-color: #203354;
     
 }
 
