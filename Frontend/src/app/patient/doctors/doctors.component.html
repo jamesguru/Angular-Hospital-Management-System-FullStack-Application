@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span>Name of doctor</span>
+
+      <span>Location</span>
+
+      <span>Room admitted</span>
+
+      <span>Book appointment</span>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search doctor by name" />
+    </div>
+
+    <div
+      class="patient-body"
+      *ngFor="
+        let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+      "
+    >
+      <div class="patient-container">
+        <span>John Kimuru</span>
+
+        <span>Texas</span>
+
+        <span>RN3 SECOND FLOOR(no 3)</span>
+
+        <span class="add-diagnosis">book</span>
+      </div>
+
+      <div class="patient-container">
+        <span>John Kimuru</span>
+
+        <span>Texas</span>
+
+        <span>RN3 SECOND FLOOR(no 3)</span>
+
+        <span class="add-diagnosis">book</span>
+      </div>
+
+      <div class="patient-container">
+        <span>John Kimuru</span>
+
+        <span>Texas</span>
+
+        <span>RN3 SECOND FLOOR(no 3)</span>
+
+        <span class="add-diagnosis">book</span>
+      </div>
+
+      <div class="patient-container">
+        <span>John Kimuru</span>
+
+        <span>Texas</span>
+
+        <span>RN3 SECOND FLOOR(no 3)</span>
+
+        <span class="add-diagnosis">book</span>
+      </div>
+
+      <div class="patient-container">
+        <span>John Kimuru</span>
+
+        <span>Texas</span>
+
+        <span>RN3 SECOND FLOOR(no 3)</span>
+
+        <span class="add-diagnosis">book</span>
+      </div>
+
+      <pagination-controls
+        (pageChange)="p = $event"
+        class="pagination"
+      ></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="wrapper">
+
+<app-topbar></app-topbar>
+
+<div class="diagnosis">
+<div class="diagnosis-header">
+
+    <span>Treatment</span>
+    <span>Drug</span>
+    <span>Doctor</span>
+    <span>Bill</span>
+    <span>Date</span>
+    <span>paid</span>
+
+</div>
+
+<div class="search">
+    <input type="text" placeholder="search bill by date">
+</div>
+<div class="diagnosis-body"  *ngFor="
+let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+">
+
+
+    <div class="diagnosis-item" >
+
+    <span>John Duff</span>
+    <span>Lactose</span>
+    <span>Kamose</span>
+    <span>$ 450</span>
+    <span>2022-10-10</span>
+    <span class="pending">pending</span>
+    </div>
+
+    <div class="diagnosis-item" >
+
+        <span>Jane Kyan</span>
+        <span>MvRVs</span>
+        <span>LIPOSE</span>
+        <span>$450</span>
+        <span>2022-10-10</span>
+        <span>paid</span>
+        </div>
+
+        <div class="diagnosis-item">
+
+            <span>James Kyan</span>
+            <span>ARVS</span>
+            <span>Loise Doe</span>
+            <span>$300</span>
+            <span>2022-10-10</span>
+            <span class="pending">pending</span>
+        </div>
+
+        <div class="diagnosis-item">
+
+            <span>James Kyan</span>
+            <span>ARVS</span>
+            <span>Loise Doe</span>
+            <span>$300</span>
+            <span>2022-10-10</span>
+            <span>paid</span>
+        </div>
+
+        
+</div>
+
+<pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+</div>
+
+    
+</div>
+

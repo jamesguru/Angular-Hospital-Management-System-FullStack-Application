@@ -8,7 +8,9 @@ const routes: Routes = [
   {path:'help/register',component:ResetComponent},
   { path: 'reception', loadChildren: () => import('./reception/reception.module').then(m => m.ReceptionModule) },
   { path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule) },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'patient', loadChildren: () => import('./patient/patient.module').then(m => m.PatientModule) },
+  { path: 'finance', loadChildren: () => import('./finance/finance.module').then(m => m.FinanceModule) }
 ];
 
 @NgModule({

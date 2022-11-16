@@ -1,0 +1,21 @@
+
+    <div class="profile" *ngIf="closemenu">
+
+        <div class="menu-icon">
+            <fa-icon [icon]="faBars" (click)="closeMenu()"></fa-icon>
+        </div>
+  
+      <img src="https://africanhype.com/wp-content/uploads/2019/04/1952ae27ae83baa8fe6124c5047f8bfe.jpg" alt="">
+      <span> Name: Jane Doe</span>
+      <span>Status: Good</span>
+      <span>Feature</span>
+      <button class="appointment" routerLink="/patient"><fa-icon [icon]="faHome" class="icon"></fa-icon>Home</button>
+      <button class="appointment" routerLink="/patient/doctors"><fa-icon [icon]="faUserDoctor" class="icon"></fa-icon>Book appointment</button>
+      <button class="drugs"><fa-icon [icon]="hospital" class="icon"></fa-icon>Buy Drugs</button>
+      <button class="logout"><fa-icon [icon]="logout" class="icon"></fa-icon> Logout</button>
+  
+      
+    </div>
+  
+    
+ 
