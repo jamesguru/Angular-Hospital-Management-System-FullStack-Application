@@ -1,0 +1,14 @@
+.container{
+
+    display: flex;
+    
+}
+.sidenav{
+
+    flex: 1;
+}
+
+.mainbar{
+
+    flex: 4;
+}

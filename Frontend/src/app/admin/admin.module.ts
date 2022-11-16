@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { AddUserComponent } from './add-user/add-user.component';
     CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChartModule
+  
   ]
 })
 export class AdminModule { }

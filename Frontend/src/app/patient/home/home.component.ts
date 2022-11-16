@@ -12,28 +12,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-  lineChart = new Chart({
-    chart: {
-      type: 'line'
-    },
-    title: {
-      text: 'Patients'
-    },
-    credits: {
-      enabled: false
-    },
-    series: [
-      {
-        name: 'Patients admitted',
-        data: [10, 2, 3,6,9,17,20,10,5,2,16]
-      } as any
-    ]
-  });
-
-
-  donutChart= new Chart( {
+  p: number = 1;
+  collection = [1]; 
+close=false;
+  donutCharts = new Chart({
     chart: {
       type: 'pie',
       plotShadow: false,
@@ -58,7 +40,7 @@ export class HomeComponent implements OnInit {
     title: {
       verticalAlign: 'middle',
       floating: true,
-      text: 'Diseases',
+      text: 'Lab test',
     },
   
     legend: {
@@ -69,16 +51,39 @@ export class HomeComponent implements OnInit {
       {
         type: 'pie',
         data: [
-          { name: 'COVID 19', y: 1, color: '#eeeeee' },
+          { name: 'Sneezing', y: 1, color: '#eeeeee' },
   
-          { name: 'HIV/AIDS', y: 2, color: '#393e46' },
+          { name: 'Coughing', y: 2, color: '#393e46' },
   
-          { name: 'EBOLA', y: 3, color: '#00adb5' },
-          { name: 'DISPORA', y: 4, color: '#eeeeee' },
-          { name: 'DIABETES', y: 5, color: '#506ef9' },
+          { name: 'Vomiting', y: 3, color: '#00adb5' },
+          { name: 'Diaphorrea', y: 4, color: '#eeeeee' },
+          { name: 'Mental Issues', y: 5, color: '#506ef9' },
         ],
       },
     ],
-  })
-}
+  });
+ 
+  lineChart = new Chart({
+    chart: {
+      type: 'line'
+    },
+    title: {
+      text: 'Patient Health Status'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [
+      {
+        name: 'Patient Health',
+        data: [10, 2, 3,6,9,17,20,10,5,2,16]
+      } as any
+    ]
+  });
 
+
+  closeModal(){
+
+  this.close=!this.close;
+  }
+}

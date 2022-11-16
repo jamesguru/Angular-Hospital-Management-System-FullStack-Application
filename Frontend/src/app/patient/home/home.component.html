@@ -1,0 +1,124 @@
+
+<div class="wrapper">
+
+<div class="charts">
+
+    <div class="pie" [chart]="donutCharts">
+   
+    </div>
+  
+    <div class="line" [chart]="lineChart"></div>
+
+</div>
+
+
+<div class="diagnosis">
+
+
+    
+
+    <div class="diagnosis-header">
+
+        <span>Name of treatment</span>
+        <span>Drug administered</span>
+        <span>Doctor</span>
+        <span>Bill</span>
+        <span>Date</span>
+        <span>paid</span>
+
+    </div>
+
+    <div class="diagnosis-body"  *ngFor="
+    let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+  ">
+
+
+        <div class="diagnosis-item" (click)="closeModal()">
+
+        <span>John Duff</span>
+        <span>Lactose</span>
+        <span>Kamose</span>
+        <span>$ 450</span>
+        <span>2022-10-10</span>
+        <span>pending</span>
+        </div>
+
+        <div class="diagnosis-item" (click)="closeModal()">
+
+            <span>Jane Kyan</span>
+            <span>MvRVs</span>
+            <span>LIPOSE</span>
+            <span>$450</span>
+            <span>2022-10-10</span>
+            <span>paid</span>
+            </div>
+
+            <div class="diagnosis-item"(click)="closeModal()">
+
+                <span>James Kyan</span>
+                <span>ARVS</span>
+                <span>Loise Doe</span>
+                <span>$300</span>
+                <span>2022-10-10</span>
+                <span>pending</span>
+                </div>
+    </div>
+
+    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+</div>
+
+</div>
+
+<div class="detail-treatment" *ngIf="close">
+
+    <div class="treatment-item">
+
+        <div class="close">
+            <button (click)="closeModal()">close</button>
+        </div>
+
+        <div class="treatment-item-detail">
+
+            <span>drug administered</span>
+            <span>Lactose</span>
+        </div>
+
+        <div class="treatment-item-detail">
+
+            <span>doctor</span>
+            <span>Dr Jayson Duff</span>
+        </div>
+        <div class="treatment-item-detail">
+
+            <span>Bill</span>
+            <span>$450</span>
+        </div>
+        <div class="treatment-item-detail">
+
+            <span>Date</span>
+            <span>2022-10-09</span>
+        </div>
+        <div class="treatment-item-detail">
+
+            <span>paid</span>
+            <span>paid</span>
+        </div>
+
+        <div class="treatment-item-detail">
+
+            <span>Treatment detail</span>
+            <span>She is an expert in the diagnosis and treatment of eye diseases. The diagnosis was a mild concussion. His doctor made an initial diagnosis of pneumonia.
+                 The committee published its diagnosis of the problems affecting urban schools
+                </span>
+        </div>
+
+        <div class="treatment-item-detail">
+
+            <span>Patient status</span>
+            <span>Good</span>
+        </div>
+
+
+    </div>
+
+</div>
