@@ -11,11 +11,11 @@
 
         <li routerLink="/admin/doctors" routerLinkActive><fa-icon [icon]="faUserDoctor" class="icon"></fa-icon> Doctors</li>
 
-
         <li routerLink="/admin/adduser" routerLinkActive ><fa-icon [icon]="faAdd" class="icon"></fa-icon> Add User</li>
+        
 
         <li routerLink="/admin/home" routerLinkActive><fa-icon [icon]="faDot" class="icon"></fa-icon>Block</li>
 
-        <li><fa-icon [icon]="logout" class="icon"></fa-icon>Logout</li>
+        <li (click)="LogOut()"><fa-icon [icon]="logout" class="icon" ></fa-icon>Logout</li>
     </ul>
 </div>

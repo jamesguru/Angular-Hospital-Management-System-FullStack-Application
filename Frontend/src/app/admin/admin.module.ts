@@ -22,7 +22,8 @@ import { ChartModule } from 'angular-highcharts';
     HomeComponent,
     DoctorsComponent,
     UsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faHome,faUser,faUserDoctor,faAdd,faDotCircle,faSignOut } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-sidenav',
@@ -13,9 +14,16 @@ faAdd=faAdd;
 faDot=faDotCircle;
 logout=faSignOut
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
+  
+  
+  LogOut(){
 
+    this.router.navigate(['/']);
+    
+
+  }
 }

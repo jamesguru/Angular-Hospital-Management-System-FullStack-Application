@@ -123,6 +123,11 @@ margin: 20px;
     
 }
 
+.hide-menubar{
+
+    display: none;
+}
+
 .pie {
   height: 250px;
   width: 400px;
