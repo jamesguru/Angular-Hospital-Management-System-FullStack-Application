@@ -1,6 +1,6 @@
 .container{
 
-    margin: 50px;
+    margin: 5px 30px;
 
     display: flex;
 
@@ -11,12 +11,12 @@
 
 h2{
 
-    margin: 10px;
+    margin: 5px;
     color: #333;
 }
 .add-item{
 
-    margin: 10px;
+    margin: 5px;
 
     display: flex;
 
@@ -27,14 +27,13 @@ h2{
 
     width: 300px;
 
-    padding: 3px;
-
+padding: 3px;
     
 }
 
 .container button{
 
-    padding: 10px;
+    padding: 5px;
 
     border: none;
 

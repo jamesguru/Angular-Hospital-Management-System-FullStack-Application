@@ -1,6 +1,16 @@
 <div class="wrapper">
 
-<app-topbar></app-topbar>
+<div class="sidenav">
+    
+        <fa-icon [icon]="faUser" class="profile-icon"></fa-icon>
+        <span class="welcome"> Welcome Jane</span>
+        <span><fa-icon [icon]="statement" class="icon"></fa-icon> Pending Bills</span>
+        <span><fa-icon [icon]="report" class="icon"></fa-icon>Statements</span>
+        <span><fa-icon [icon]="statement" class="icon"></fa-icon>Paid Bills</span>
+        <span><fa-icon [icon]="logout" class="icon"></fa-icon>Logout</span>
+      
+
+</div>
 
 <div class="diagnosis">
 <div class="diagnosis-header">
@@ -50,6 +60,36 @@ let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
             <span>$300</span>
             <span>2022-10-10</span>
             <span class="pending">pending</span>
+        </div>
+
+        <div class="diagnosis-item">
+
+            <span>James Kyan</span>
+            <span>ARVS</span>
+            <span>Loise Doe</span>
+            <span>$300</span>
+            <span>2022-10-10</span>
+            <span>paid</span>
+        </div>
+
+        <div class="diagnosis-item">
+
+            <span>James Kyan</span>
+            <span>ARVS</span>
+            <span>Loise Doe</span>
+            <span>$300</span>
+            <span>2022-10-10</span>
+            <span>paid</span>
+        </div>
+
+        <div class="diagnosis-item">
+
+            <span>James Kyan</span>
+            <span>ARVS</span>
+            <span>Loise Doe</span>
+            <span>$300</span>
+            <span>2022-10-10</span>
+            <span>paid</span>
         </div>
 
         <div class="diagnosis-item">

@@ -1,5 +1,5 @@
 
-    <div class="profile" *ngIf="closemenu">
+    <div class="{{closemenu ? 'profile' : 'hide-menubar'}}" *ngIf="closemenu">
 
         <div class="menu-icon">
             <fa-icon [icon]="faBars" (click)="closeMenu()"></fa-icon>

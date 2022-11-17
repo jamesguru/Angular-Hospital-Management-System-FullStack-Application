@@ -1,5 +1,55 @@
+
+.wrapper{
+
+    display: flex;
+    
+}
+.profile-icon{
+
+    font-size: 50px; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidenav{
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    height: 100vh;
+    background-color: #ebedf9;
+    font-size: 15px;
+}
+.welcome{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+}
+.icon{
+
+    font-weight: 35px;
+    margin:0px 20px;
+    cursor: pointer;
+
+    
+}
+
+.sidenav span{
+
+    margin: 20px;
+}
+
 .diagnosis{
-    margin: 10px;
+    margin: 50px;
+
+    flex: 4;
 }
 .diagnosis-header{
 
@@ -7,8 +57,10 @@
     font-weight: 900;
     align-items: center;
     justify-content: space-evenly;
-   
+    background-color:#ebedf9;
     padding: 20px;
+
+    margin: 0px 50px;
     
 }
 
