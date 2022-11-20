@@ -3,10 +3,10 @@
 -- CREATE DIAGNOSIS
 
 -- CREATE PROCEDURE addDiagnosis @name_treatment NVARCHAR(500),@drug_administered NVARCHAR(500),@doctor_name NVARCHAR(500),
--- @bill INT,@date NVARCHAR(500),@paid int,@description NVARCHAR(4000),@patient_status NVARCHAR(500)
+-- @patient_email NVARCHAR(500),@bill INT,@date NVARCHAR(500),@paid int,@description NVARCHAR(4000),@patient_status NVARCHAR(500)
 -- AS
--- INSERT INTO diagnosis(name_treatment,drug_administered,doctor_name,bill,date,paid,description,patient_status)
--- VALUES(@name_treatment,@drug_administered,@doctor_name,@bill,@date,@paid,@description,@patient_status) 
+-- INSERT INTO diagnosis(name_treatment,drug_administered,doctor_name,patient_email,bill,date,paid,description,patient_status)
+-- VALUES(@name_treatment,@drug_administered,@doctor_name,@patient_email,@bill,@date,@paid,@description,@patient_status)
 
 -- UPDATE DIAGNOSIS
 
@@ -14,21 +14,46 @@
 -- AS
 -- UPDATE diagnosis SET paid = 1 WHERE id=@id
 
+-- GET DIAGNOSIS FOR USER
+
+-- CREATE PROCEDURE getDiagnosisForUser @email NVARCHAR(500)
+-- AS
+-- SELECT * FROM diagnosis WHERE patient_email=@email
+
+-- CHECK DIAGNOSIS
+
+-- CHECK DIAGNOSIS
+-- CREATE PROCEDURE checkDiagnosis 
+-- AS
+-- SELECT * FROM diagnosis WHERE issent=0;
+
+-- UPDATE DIAGNOSIS AND SEND EMAIL
+-- CREATE PROCEDURE updateDiagnosisSentEmail
+-- AS
+-- UPDATE diagnosis SET issent=1 WHERE issent=0
+
 
 --APPOINTMENT 
 
 --ADD APPOINTMENT
 
 -- CREATE PROCEDURE addAppointment @patient_name NVARCHAR(500),@doctor_email NVARCHAR(500),@date NVARCHAR(500),@patient_email VARCHAR(500) 
---AS
+-- AS
 -- INSERT INTO appointment(patient_name,doctor_email,date,patient_email)
 -- VALUES(@patient_name,@doctor_email,@date,@patient_email)
 
 -- UPDATE STATUS
 
--- CREATE PROCEDURE updateAppointment @id INT
---AS
--- UPDATE appointment SET issent = 1 WHERE id=@id
+-- CREATE PROCEDURE updateAppointment
+-- AS
+-- UPDATE appointment SET issent=1 WHERE issent=0
+
+-- CHECK APPOINTMENT 
+
+-- CREATE PROCEDURE checkAppointment
+-- AS
+-- SELECT * FROM appointment WHERE issent=0;
+
 
 -- USERS
 
@@ -64,6 +89,24 @@
 -- AS
 -- UPDATE Users SET issent=1 WHERE id=@id
 
+-- CHECK USER
+-- CREATE PROCEDURE getDoctors
+-- AS
+-- SELECT * FROM Users WHERE role='doctor'
+
+-- CHECK USER
+
+-- CREATE PROCEDURE checkUser
+-- AS
+-- SELECT * FROM Users WHERE issent=0 
+
+
+-- UPDATE USER AND SEND EMAIL
+
+-- CREATE PROCEDURE updateUserEmailSent
+-- AS
+-- UPDATE Users SET issent=1 WHERE issent=0
+
 -- PATIENTS
 
 -- ADD PATIENT 
@@ -85,3 +128,20 @@
 -- CREATE PROCEDURE deletePatient @id INT
 -- AS
 -- DELETE FROM patients WHERE id=@id
+
+-- GET ALL PATIENTS
+
+-- CREATE PROCEDURE getAllPatients
+-- AS
+-- SELECT * FROM patients
+
+-- CHECK PATIENT
+
+-- CREATE PROCEDURE checkPatient
+-- AS
+-- SELECT * FROM patient WHERE issent=0; 
+
+-- UPDATE PATIENT AND SEND EMAIL
+-- CREATE PROCEDURE updatePatientEmailSent
+-- AS
+-- UPDATE patients SET issent=1 WHERE issent=0

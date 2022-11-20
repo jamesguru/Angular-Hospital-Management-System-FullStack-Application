@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { faUser} from '@fortawesome/free-solid-svg-icons';
 
@@ -9,12 +10,15 @@ import { faUser} from '@fortawesome/free-solid-svg-icons';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
   faUser=faUser;
 
-  
+  Logout(){
+
+    this.router.navigate(['/']);
+  }
 }

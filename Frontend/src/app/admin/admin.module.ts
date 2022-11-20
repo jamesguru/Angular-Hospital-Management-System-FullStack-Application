@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ChartModule } from 'angular-highcharts';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { ChartModule } from 'angular-highcharts';
     AdminRoutingModule,
     FontAwesomeModule,
     NgxPaginationModule,
-    ChartModule
+    ChartModule,
+    ReactiveFormsModule,
+    FormsModule
   
   ]
 })

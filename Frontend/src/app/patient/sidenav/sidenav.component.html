@@ -12,7 +12,7 @@
       <button class="appointment" routerLink="/patient"><fa-icon [icon]="faHome" class="icon"></fa-icon>Home</button>
       <button class="appointment" routerLink="/patient/doctors"><fa-icon [icon]="faUserDoctor" class="icon"></fa-icon>Book appointment</button>
       <button class="drugs"><fa-icon [icon]="hospital" class="icon"></fa-icon>Buy Drugs</button>
-      <button class="logout"><fa-icon [icon]="logout" class="icon"></fa-icon> Logout</button>
+      <button class="logout" (click)="Logout()"><fa-icon [icon]="logout" class="icon"></fa-icon> Logout</button>
   
       
     </div>

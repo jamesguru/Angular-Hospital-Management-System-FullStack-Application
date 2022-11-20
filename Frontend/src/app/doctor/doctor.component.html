@@ -1,6 +1,7 @@
 <div class="wrapper">
 
     <app-topbar></app-topbar>
+
     <div class="container">
 
         <form [formGroup]="form">
@@ -28,131 +29,86 @@
     
       
       <div class="search">
-        <input type="text" placeholder="Search patient by Id no" />
+        <input type="text" placeholder="Search patient by admission no" [(ngModel)]="searchText"/>
       </div>
+
+
+      <div *ngIf="patients$ | async as patients">
     
+    
+        <div *ngIf="patients.length;else noPatients">
       <div
         class="patient-body"
         *ngFor="
-          let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+          let item of patients | paginate: 
+          { itemsPerPage: 4, currentPage: p } 
+          | search:searchText
+         
         "
+        
       >
-    
-    
+  
         <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          <span>Good</span>
+          <span>{{item.name}}</span>
 
-          <span class="add-diagnosis"  (click)="showAdd()">Add</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
+      <span>{{item.resident_area}}</span>
+
+      <span>{{item.room_admitted}}</span>
+
+      <span>{{item.admission_no}}</span>
+
+      <span>{{item.id_no}}</span>
+
           <span>Good</span>
-          <span class="add-diagnosis"  (click)="showAdd()">Add</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          <span>Good</span>
-          <span class="add-diagnosis"  (click)="showAdd()">Add</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          <span>Good</span>
-          <span class="add-diagnosis"  (click)="showAdd()">Add</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          <span>Good</span>
-          <span class="add-diagnosis" (click)="showAdd()">Add</span>
+          <span class="add-diagnosis" (click)="showAdd(item.email)">Add</span>
         </div>
     
        
-        <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+       
       </div>
-
-
-      
-
-    
     </div>
+
+    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
     </div>
+  </div>
+</div>
+
+<ng-template #noPatients>
+
+</ng-template>
+
+<form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
    <div class="treatment" *ngIf="close">
     <div class="add-treatment">
     
         <h3>Add Treatment</h3>
 
-        <span class="close" (click)="showAdd()">Close</span>
+        <span class="close" (click)="Close()">Close</span>
 
         <label for="">Name of treatment</label>
-        <input type="text">
+        <input type="text" formControlName="name_treatment">
 
         <label for="">Drug administered</label>
-        <input type="text">
+        <input type="text" formControlName="drug_administered">
+
+        <label for="">Doctor Name</label>
+        <input type="text" formControlName="doctor_name">
 
         <label for="">Describe treatment</label>
-        <textarea type="text"></textarea>
+        <textarea type="text" formControlName="description"></textarea>
 
         <label for="">status</label>
-        <input type="text">
+        <input type="text" formControlName="patient_status">
         <label for="">Bill</label>
-        <input type="number">
+        <input type="number" formControlName="bill">
         
         <label for="">Date</label>
-        <input type="date">
+        <input type="date" formControlName="date">
 
-        <button class="btn-add">Submit</button>
+        <button class="btn-add"[disabled]="!form.valid">Submit</button>
         
     </div>
    </div> 
-    
+</form> 
    
         

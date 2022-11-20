@@ -6,6 +6,7 @@ import { appointmentRoute, diagnosisRoute, userRoute,patientRoute } from "./rout
 const app = express();
 dotenv.config();
 app.use(json());
+app.use(cors())
 
 const PORT = process.env.PORT;
 

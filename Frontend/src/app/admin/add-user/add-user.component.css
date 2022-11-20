@@ -16,7 +16,7 @@ h2{
 }
 .add-item{
 
-    margin: 5px;
+    margin: 20px;
 
     display: flex;
 
@@ -27,13 +27,13 @@ h2{
 
     width: 300px;
 
-padding: 3px;
+padding: 5px;
     
 }
 
 .container button{
 
-    padding: 5px;
+    padding: 10px;
 
     border: none;
 
@@ -45,6 +45,8 @@ padding: 3px;
 margin-top: 20px;
 
     width: 300px;
+
+    cursor:pointer;
 }
 
 .add-item select{

@@ -1,143 +1,70 @@
 <div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span>Name</span>
 
-    <div class="container">
+      <span>Email</span>
 
-    
-      <div class="patient-header">
-        <span>Name</span>
-    
-        <span>Resident area</span>
-    
-        <span>Role</span>
-    
-        <span>Security No</span>
-    
-        <span>Id no</span>
-    
-       
+      <span>Role</span>
 
-        <span>Delete</span>
-      </div>
-    
-      
-      <div class="search">
-        <input type="text" placeholder="Search patient by Id no" />
-      </div>
-    
-      <div
-        class="patient-body"
-        *ngFor="
-          let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
-        "
-      >
-    
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          
+      <span>Security No</span>
 
-          <span class="add-diagnosis"  (click)="showAdd()">Delete</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-        
-          <span class="add-diagnosis"  (click)="showAdd()">Delete</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-         
-          <span class="add-diagnosis"  (click)="showAdd()">Delete</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          
-          <span class="add-diagnosis"  (click)="showAdd()">Delete</span>
-        </div>
-    
-        <div class="patient-container">
-          <span>John Kimuru</span>
-    
-          <span>Texas</span>
-    
-          <span>RN3 SECOND FLOOR(no 3)</span>
-    
-          <span>MRV194526491</span>
-    
-          <span>3452728282882</span>
-    
-          
-          <span class="add-diagnosis" (click)="showAdd()">Delete</span>
-        </div>
-    
-       
-        <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
-      </div>
+      <span>Id no</span>
 
-
-      
-
-    
+      <span>Delete</span>
     </div>
+
+    <div class="search">
+      <input type="text" placeholder="Search patient by Id no" />
     </div>
-   <div class="treatment" *ngIf="close">
+
+    <div class="orders-body" *ngIf="users$ | async as users">
+      <div *ngIf="users.length; else noUsers">
+        <div
+          class="patient-body"
+          *ngFor="
+            let user of users | paginate: { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <div class="patient-container">
+            <span>{{user.name}}</span>
+
+            <span>{{user.email}}</span>
+
+            <span>{{user.role}}</span>
+
+            <span>MRV194526491</span>
+
+            <span>3452728282882</span>
+
+            <span class="add-diagnosis" (click)="showAdd(user.id)">Delete</span>
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+     
+    </div>
+
+    
+  </div>
+
+  <ng-template #noUsers>
+    <h1>No Users</h1>
+  </ng-template>
+  <div class="treatment" *ngIf="close">
     <div class="add-treatment">
-
-
       <div class="delete-item">
-
         <span>Are you sure you want to delete this user?</span>
 
         <div class="delete-cancel">
+          <button class="cancel" (click)="showAdd(1233)">Cancel</button>
 
-          <button class="cancel" (click)="showAdd()">Cancel</button>
-
-          <button class="delete">Delete</button>
+          <button class="delete" (click)="deleteUser()">Delete</button>
         </div>
       </div>
-    
-        
-        
     </div>
-   </div> 
-    
-   
-        
+  </div>
+</div>

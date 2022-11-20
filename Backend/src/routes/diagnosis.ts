@@ -5,7 +5,7 @@ const router = Router();
 
 router.post('/',createDiagnosis );
 router.put('/:id',updateDiagnosis);
-router.get('/user',getDiagnosisForUser)
+router.post('/user',getDiagnosisForUser)
 
 
 

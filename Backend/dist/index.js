@@ -27,11 +27,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const routes_1 = require("./routes");
 const app = (0, express_1.default)();
 dotenv_1.default.config();
 app.use((0, express_1.json)());
+app.use((0, cors_1.default)());
 const PORT = process.env.PORT;
 app.use('/api/diagnosis', routes_1.diagnosisRoute);
 app.use('/api/users', routes_1.userRoute);

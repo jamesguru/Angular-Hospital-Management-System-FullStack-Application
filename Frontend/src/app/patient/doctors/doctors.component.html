@@ -14,66 +14,52 @@
       <input type="text" placeholder="Search doctor by name" />
     </div>
 
+    <div *ngIf="doctors$ | async as doctors">
+    
+    
+      <div *ngIf="doctors.length">
     <div
       class="patient-body"
       *ngFor="
-        let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+        let item of doctors | paginate: { itemsPerPage: 4, currentPage: p }
       "
     >
       <div class="patient-container">
-        <span>John Kimuru</span>
+        <span>{{item.name}}</span>
 
-        <span>Texas</span>
+        <span>{{item.role}}</span>
 
-        <span>RN3 SECOND FLOOR(no 3)</span>
+        <span>{{item.email}}</span>
 
-        <span class="add-diagnosis">book</span>
+        <span class="add-diagnosis" (click)="showBook(item.email)">book</span>
       </div>
 
-      <div class="patient-container">
-        <span>John Kimuru</span>
-
-        <span>Texas</span>
-
-        <span>RN3 SECOND FLOOR(no 3)</span>
-
-        <span class="add-diagnosis">book</span>
-      </div>
-
-      <div class="patient-container">
-        <span>John Kimuru</span>
-
-        <span>Texas</span>
-
-        <span>RN3 SECOND FLOOR(no 3)</span>
-
-        <span class="add-diagnosis">book</span>
-      </div>
-
-      <div class="patient-container">
-        <span>John Kimuru</span>
-
-        <span>Texas</span>
-
-        <span>RN3 SECOND FLOOR(no 3)</span>
-
-        <span class="add-diagnosis">book</span>
-      </div>
-
-      <div class="patient-container">
-        <span>John Kimuru</span>
-
-        <span>Texas</span>
-
-        <span>RN3 SECOND FLOOR(no 3)</span>
-
-        <span class="add-diagnosis">book</span>
-      </div>
-
-      <pagination-controls
+      
+      
+    </div>
+  </div>
+  <pagination-controls
         (pageChange)="p = $event"
         class="pagination"
       ></pagination-controls>
+</div>
+</div>
+</div>
+
+<div class="book" *ngIf="showbook">
+
+  <div class="book-appointment">
+
+    <h3>Choose the date for the appointment and confirm.</h3>
+
+    <input type="date" [(ngModel)]="date">
+
+    <div class="book-cancel">
+
+      <button class="btn-cancel" (click)="Close()">Cancel</button>
+      <button class="btn-book" (click)="Book()">book</button>
     </div>
   </div>
+
 </div>
+

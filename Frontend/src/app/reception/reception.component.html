@@ -21,94 +21,52 @@
     <span (click)="showAdd()">Add patient</span>   
   </div>
   <div class="search">
-    <input type="text" placeholder="Search patient by Id no" />
+    <input type="text" placeholder="Search patient by admission no"  [(ngModel)]="searchText" />
   </div>
 
-  <div
-    class="patient-body"
-    *ngFor="
-      let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
-    "
-  >
 
-
-    <div class="patient-container">
-      <span>John Kimuru</span>
-
-      <span>Texas</span>
-
-      <span>RN3 SECOND FLOOR(no 3)</span>
-
-      <span>MRV194526491</span>
-
-      <span>3452728282882</span>
-
-      <span>Good</span>
-    </div>
-
-    <div class="patient-container">
-      <span>John Kimuru</span>
-
-      <span>Texas</span>
-
-      <span>RN3 SECOND FLOOR(no 3)</span>
-
-      <span>MRV194526491</span>
-
-      <span>3452728282882</span>
-
-      <span>Good</span>
-    </div>
-
-    <div class="patient-container">
-      <span>John Kimuru</span>
-
-      <span>Texas</span>
-
-      <span>RN3 SECOND FLOOR(no 3)</span>
-
-      <span>MRV194526491</span>
-
-      <span>3452728282882</span>
-
-      <span>Good</span>
-    </div>
-
-    <div class="patient-container">
-      <span>John Kimuru</span>
-
-      <span>Texas</span>
-
-      <span>RN3 SECOND FLOOR(no 3)</span>
-
-      <span>MRV194526491</span>
-
-      <span>3452728282882</span>
-
-      <span>Good</span>
-    </div>
-
-    <div class="patient-container">
-      <span>John Kimuru</span>
-
-      <span>Texas</span>
-
-      <span>RN3 SECOND FLOOR(no 3)</span>
-
-      <span>MRV194526491</span>
-
-      <span>3452728282882</span>
-
-      <span>Good</span>
-    </div>
+  
+  
+  <div *ngIf="patients$ | async as patients">
+    
+    
+    <div *ngIf="patients.length;else noPatients">
 
    
-    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+  <div class="patient-body" *ngFor="let item of patients | paginate: { itemsPerPage: 5, currentPage: p } | search:searchText">
+
+
+    <div class="patient-container">
+      <span>{{item.name}}</span>
+
+      <span>{{item.resident_area}}</span>
+
+      <span>{{item.room_admitted}}</span>
+
+      <span>{{item.admission_no}}</span>
+
+      <span>{{item.id_no}}</span>
+
+      <span>Good</span>
+    </div>
+
+    
+   
+   
   </div>
 </div>
+
+<pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
 </div>
 
+</div>
+</div>
 
+<ng-template #noPatients>
+
+</ng-template>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 <div class="addpatient" *ngIf="close">
 
     <div class="add_patient_item">
@@ -118,30 +76,30 @@
         <span class="close" (click)="showAdd()">Close</span>
 
         <label for="">Name</label>
-        <input type="text">
+        <input type="text" formControlName="name">
 
         <label for="">Email</label>
-        <input type="text">
+        <input type="text" formControlName="email">
 
         <label for="">Resident area</label>
-        <input type="text">
+        <input type="text" formControlName="resident_area">
 
         <label for="">Room No</label>
-        <input type="text">
-
-        <label for="">Security No</label>
-        <input type="text">
-
-        <label for="">Id no</label>
-        <input type="text">
-
+        <input type="text" formControlName="room_admitted">
         <label for="">Admission no</label>
-        <input type="text">
+        <input type="text" formControlName="admission_no">
 
-        <label for="">Date</label>
-        <input type="date">
+  
+        <label for="">Id no</label>
+        <input type="text" formControlName="id_no">
 
-        <button class="btn-add">Submit</button>
+        
+
+        
+
+        <button class="btn-add" [disabled]="!form.valid">Submit</button>
         
     </div>
 </div>
+
+</form>

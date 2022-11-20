@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faHome,faUser,faUserDoctor,faAdd,faDotCircle,faSignOut,faHospital,faBars } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -7,7 +9,7 @@ import { faHome,faUser,faUserDoctor,faAdd,faDotCircle,faSignOut,faHospital,faBar
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +26,11 @@ export class SidenavComponent implements OnInit {
   closeMenu(){
 
     this.closemenu=!this.closemenu;
+  }
+
+  Logout(){
+
+    this.router.navigate(['/'])
+    localStorage.clear()
   }
 }
