@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RegisterUser } from 'src/app/interfaces/User';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
+
+  users$!:Observable<RegisterUser[]>;
 
   ngOnInit(): void {
+
+    this.getUsers();
+  }
+
+  getUsers(){
+    this.users$=this.authService.getUsers();
   }
 
 }

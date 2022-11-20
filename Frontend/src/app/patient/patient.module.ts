@@ -8,6 +8,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { HomeComponent } from './home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,14 +16,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PatientComponent,
     SidenavComponent,
     DoctorsComponent,
-    HomeComponent
+    HomeComponent,
+    
   ],
   imports: [
     CommonModule,
     PatientRoutingModule,
     ChartModule,
     NgxPaginationModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ]
 })
 export class PatientModule { }

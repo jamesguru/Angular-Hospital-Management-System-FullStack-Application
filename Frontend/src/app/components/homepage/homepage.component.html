@@ -108,6 +108,7 @@
   </div>
 </div>
 
+<form #form="ngForm" (ngSubmit)="onSubmit()">
 
 <div class="login-container" *ngIf="login" >
 
@@ -120,9 +121,9 @@
 
             <h1>Vigen Medics</h1>
 
-            <input type="text" placeholder="Enter email">
-            <input type="password" placeholder="Enter Password">
-            <button class="btn-login">Login</button>
+            <input type="text" placeholder="Enter email" ngModel name="email" email required #email="ngModel">
+            <input type="password" placeholder="Enter Password" ngModel name="password" required #password="ngModel">
+            <button class="btn-login"  [disabled]="!form.valid">Login</button>
 
             <span (click) = "helpRegister()">Ask to be registered.</span>
         </div>
@@ -130,3 +131,4 @@
     </div>
 
 </div>
+</form>

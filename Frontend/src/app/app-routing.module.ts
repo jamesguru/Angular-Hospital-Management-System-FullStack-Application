@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { AdminGuard } from './guards/admin.guard';
+import { FinanceGuard } from './guards/finance.guard';
+import { PatientGuard } from './guards/patient.guard';
+import { ReceptionGuard } from './guards/reception.guard';
+
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},

@@ -26,10 +26,16 @@
         <span>Date</span>
         <span>paid</span>
 
+
     </div>
 
+
+    <div *ngIf="diagnosis$ | async as diagnosis">
+    
+    
+    <div *ngIf="diagnosis.length;else noDiagnosis">
     <div class="diagnosis-body"  *ngFor="
-    let item of collection | paginate: { itemsPerPage: 1, currentPage: p }
+    let item of diagnosis | paginate: { itemsPerPage: 3, currentPage: p }
   ">
 
 
@@ -43,31 +49,20 @@
         <span>pending</span>
         </div>
 
-        <div class="diagnosis-item" (click)="closeModal()">
-
-            <span>Jane Kyan</span>
-            <span>MvRVs</span>
-            <span>LIPOSE</span>
-            <span>$450</span>
-            <span>2022-10-10</span>
-            <span>paid</span>
-            </div>
-
-            <div class="diagnosis-item"(click)="closeModal()">
-
-                <span>James Kyan</span>
-                <span>ARVS</span>
-                <span>Loise Doe</span>
-                <span>$300</span>
-                <span>2022-10-10</span>
-                <span>pending</span>
-                </div>
     </div>
 
-    <pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+    
 </div>
 
 </div>
+
+<pagination-controls (pageChange)="p = $event" class="pagination"></pagination-controls>
+</div>
+</div>
+
+<ng-template #noDiagnosis>
+
+</ng-template>
 
 <div class="detail-treatment" *ngIf="close">
 
@@ -122,3 +117,5 @@
     </div>
 
 </div>
+
+

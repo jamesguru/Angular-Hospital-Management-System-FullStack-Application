@@ -6,14 +6,18 @@ import { DoctorComponent } from './doctor.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule,MatSlider } from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+import { SearchPipe } from '../pipes/search.pipe';
+
 
 @NgModule({
   declarations: [
     DoctorComponent,
-    TopbarComponent
+    TopbarComponent,
+    SearchPipe
+    
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     NgxPaginationModule,
     ReactiveFormsModule,
     MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ]
 })

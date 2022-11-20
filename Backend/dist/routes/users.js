@@ -6,4 +6,6 @@ const router = (0, express_1.Router)();
 router.post('/signin', users_1.signIn);
 router.post('/signup', users_1.signUp);
 router.get('/', users_1.getUsers);
+router.delete('/:id', users_1.deleteUsers);
+router.get('/getdoctors', users_1.getDoctors);
 exports.default = router;

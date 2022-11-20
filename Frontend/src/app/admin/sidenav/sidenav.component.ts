@@ -22,6 +22,7 @@ logout=faSignOut
   
   LogOut(){
 
+    localStorage.clear();
     this.router.navigate(['/']);
     
 
